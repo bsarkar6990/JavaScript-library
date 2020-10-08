@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>collision detection in svg</title>
+		<script src="collision.js"></script>
+		<script>
+			window.onload=function(){
+				var test=document.getElementById('test');
+				initgraph();
+				var c1=[],x=10,y=10,speed,c;
+				for(i=1;i<=100;){
+					x=Math.floor((Math.random() * 1020) + 10);
+					y=Math.floor((Math.random() * 760) + 10);
+					c=Math.floor((Math.random() * 760) + 1);
+					speed=Math.floor((Math.random() * 10) + 5);
+					c1[i]=createshape('circle',x,y,10,c+100,c);
+					if (c1[i]!=null)
+					{
+                        c1[i].parameters.speed=speed; 
+						c1[i].parameters.reflect=true;
+						c1[i].parameters.angle=270+i;
+						c1[i].move();	
+						
+					}	i++;
+				}
+			}
+		</script>
+		
+	</head>
+	<body>
+		<div id="test"></div>
+	</body>
+</html>
